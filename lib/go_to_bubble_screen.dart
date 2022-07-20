@@ -11,26 +11,29 @@ class GoToBubbleScreen extends StatefulWidget {
 }
 
 class _GoToBubbleScreenState extends State<GoToBubbleScreen> {
+  int _currentindex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
+          currentIndex: _currentindex,
+          onTap: (index) => setState(() => _currentindex = index),
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
               label: 'Direction',
-              icon: Icon(Icons.directions),
+              icon: Icon(IconsConstants.direction),
             ),
             BottomNavigationBarItem(
               label: 'Like',
-              icon: Icon(Icons.thumb_up),
+              icon: Icon(IconsConstants.like),
             ),
             BottomNavigationBarItem(
               label: 'Message',
-              icon: Icon(Icons.messenger_outline),
+              icon: Icon(IconsConstants.message),
             ),
             BottomNavigationBarItem(
               label: 'Profile',
-              icon: Icon(Icons.account_circle),
+              icon: Icon(IconsConstants.profile),
             ),
           ],
           selectedItemColor: ColorsConstants.orange,

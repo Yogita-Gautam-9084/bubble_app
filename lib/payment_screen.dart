@@ -236,8 +236,11 @@ class _PaymentScreenState extends State<PaymentScreen> {
                                     ),
                                     const Spacer(),
                                     InkWell(
-                                      onTap: (){
-                                        Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const GoToBubbleScreen() ));
+                                      onTap: () {
+                                        Navigator.of(context).push(
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    const GoToBubbleScreen()));
                                       },
                                       child: const Icon(
                                         IconsConstants.arrowForward,
@@ -252,19 +255,20 @@ class _PaymentScreenState extends State<PaymentScreen> {
                                 color: ColorsConstants.grey,
                               ),
                               Row(
-                                children:const [
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: const [
+                                  SizedBox(width: 50,),
                                   Text(
                                     StringConstants.payGuacamole,
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.bold
-                                    ),
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.bold),
                                   ),
-                                  Spacer(),
+
                                   Text(
                                     StringConstants.payAmount,
                                     style: TextStyle(
                                         fontWeight: FontWeight.bold,
-                                        fontSize: 40),
+                                        fontSize: 30),
                                   ),
                                 ],
                               ),
@@ -274,10 +278,18 @@ class _PaymentScreenState extends State<PaymentScreen> {
                               ),
                               Column(
                                 children: [
-                                  Image.asset('assets/img.png',height: 100,width: 30,),
-                                  const Text(StringConstants.confirmWith,style: TextStyle(fontWeight: FontWeight.bold),)
+                                  Image.asset(
+                                    'assets/img.png',
+                                    height:  100,
+                                    width: 100,
+                                  ),
+                                  const Text(
+                                    StringConstants.confirmWith,
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.bold),
+                                  ),
                                 ],
-                              )
+                              ),
                             ],
                           ),
                         ),

@@ -12,26 +12,30 @@ class ChoosePLanScreen extends StatefulWidget {
 }
 
 class _ChoosePLanScreenState extends State<ChoosePLanScreen> {
+  int _currentindex =0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _currentindex,
+          onTap: (index)=> setState(() =>_currentindex =index),
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
               label: 'Direction',
-              icon: Icon(Icons.directions),
+              icon: Icon(IconsConstants.direction),
             ),
             BottomNavigationBarItem(
               label: 'Like',
-              icon: Icon(Icons.thumb_up),
+              icon: Icon(IconsConstants.like),
             ),
             BottomNavigationBarItem(
               label: 'Message',
-              icon: Icon(Icons.messenger_outline),
+              icon: Icon(IconsConstants.message),
             ),
             BottomNavigationBarItem(
               label: 'Profile',
-              icon: Icon(Icons.account_circle),
+              icon: Icon(IconsConstants.profile),
             ),
           ],
           selectedItemColor: ColorsConstants.orange,
@@ -63,6 +67,7 @@ class _ChoosePLanScreenState extends State<ChoosePLanScreen> {
                       style:
                           TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
                     ),
+                    const SizedBox(height: 10,),
                     const Text(
                       StringConstants.chooseYourPlan,
                       style: TextStyle(color: ColorsConstants.grey),
@@ -91,11 +96,11 @@ class _ChoosePLanScreenState extends State<ChoosePLanScreen> {
                                   StringConstants.premium,
                                   style: TextStyle(
                                       fontWeight: FontWeight.bold,
-                                      fontSize: 30),
+                                      fontSize: 20),
                                 ),
                                 Text(
                                   StringConstants.premiumCost,
-                                  style: TextStyle(fontSize: 20),
+                                  style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),
                                 ),
                               ],
                             ),
@@ -115,7 +120,7 @@ class _ChoosePLanScreenState extends State<ChoosePLanScreen> {
                                   StringConstants.discount,
                                   style: TextStyle(
                                       color: ColorsConstants.cyan,
-                                      fontSize: 40),
+                                      fontSize: 35),
                                 ),
                                 SizedBox(
                                   height: 15,
@@ -123,8 +128,9 @@ class _ChoosePLanScreenState extends State<ChoosePLanScreen> {
                                 Text(
                                   StringConstants.unlimitedLikes,
                                   style: TextStyle(
-                                      fontSize: 20,
-                                      color: ColorsConstants.blueGrey),
+                                      fontSize: 18,
+                                      color: ColorsConstants.black
+                                  ),
                                 ),
                                 Divider(
                                   color: ColorsConstants.grey,
@@ -136,8 +142,9 @@ class _ChoosePLanScreenState extends State<ChoosePLanScreen> {
                                 Text(
                                   StringConstants.unlimitedHobbiesListed,
                                   style: TextStyle(
-                                      fontSize: 20,
-                                      color: ColorsConstants.blueGrey),
+                                      fontSize: 18,
+                                      color: ColorsConstants.black
+                                  ),
                                 ),
                                 Divider(
                                   color: ColorsConstants.grey,
@@ -146,8 +153,19 @@ class _ChoosePLanScreenState extends State<ChoosePLanScreen> {
                                 Text(
                                   StringConstants.locationChange,
                                   style: TextStyle(
-                                      fontSize: 20,
-                                      color: ColorsConstants.blueGrey),
+                                      fontSize: 18,
+                                      color: ColorsConstants.black),
+                                ),
+                                Divider(
+                                  color: ColorsConstants.grey,
+                                  thickness: 1,
+                                ),
+
+                                Text(
+                                  StringConstants.seeLikeProfiles,
+                                  style: TextStyle(
+                                      fontSize: 18,
+                                      color: ColorsConstants.black),
                                 ),
                                 Divider(
                                   color: ColorsConstants.grey,
@@ -156,9 +174,10 @@ class _ChoosePLanScreenState extends State<ChoosePLanScreen> {
                                 Text(
                                   StringConstants.yourMessages,
                                   style: TextStyle(
-                                      fontSize: 20,
-                                      color: ColorsConstants.blueGrey),
+                                      fontSize: 18,
+                                      color: ColorsConstants.black),
                                 ),
+
                               ],
                             ),
                           ),
@@ -201,7 +220,7 @@ class _ChoosePLanScreenState extends State<ChoosePLanScreen> {
                   ),
                   child: const Center(
                     child: Text(
-                      StringConstants.perMonth,
+                      StringConstants.perMonth,style: TextStyle(fontWeight: FontWeight.bold),
                     ),
                   ),
                 ),
