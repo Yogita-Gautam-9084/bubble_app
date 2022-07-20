@@ -1,4 +1,5 @@
 import 'package:bubble_app/go_to_bubble_screen.dart';
+import 'package:bubble_app/liked_in_premium.dart';
 import 'package:bubble_app/payment_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -22,6 +23,7 @@ class MyApp extends StatelessWidget {
       home: const ChoosePLanScreen(),
        // home: const PaymentScreen(),
       // home: const GoToBubbleScreen(),
+      // home: const LikedInPremium(),
     );
   }
 }

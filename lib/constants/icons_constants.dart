@@ -9,4 +9,6 @@ class IconsConstants {
   static const message = Icons.messenger_outline;
   static const profile = Icons.person_rounded;
   static const arrowForward = Icons.arrow_forward_ios;
+  static const diamond = Icons.diamond_outlined;
+
 }
